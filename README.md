@@ -10,6 +10,14 @@ place would ease the transition to Grid'5000 in the future.
 
 Run `enos deploy`
 
+NB: the configuration is set to use an external persistent registry. You can
+start on the host machine :
+
+```
+docker run -e "REGISTRY_PROXY_REMOTEURL=https://registry-1.docker.io" -p 0.0.0.0:4000:5000 --name registry -ti registry:2
+```
+
+
 ## Run on vagrant(vbox) on a remote Grid'5000 machine
 
 Rationale: bootstrap a vagrant(vbox) environment for testing/debugging purpose
