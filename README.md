@@ -11,7 +11,7 @@ place would ease the transition to Grid'5000 in the future.
 Run `enos deploy`
 
 NB: the configuration is set to use an external persistent registry. You can
-start on the host machine :
+start one on the host machine :
 
 ```
 docker run -e "REGISTRY_PROXY_REMOTEURL=https://registry-1.docker.io" -p 0.0.0.0:4000:5000 --name registry -ti registry:2
