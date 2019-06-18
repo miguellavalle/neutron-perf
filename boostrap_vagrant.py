@@ -21,7 +21,7 @@ force_deploy = True if os.environ.get("G5K_FORCE") else False
 conf = Configuration.from_settings(job_name="Miguel_test",
                                    env_name="debian9-x64-std",
                                    force_deploy=force_deploy,
-                                   walltime="06:00:00")\
+                                   walltime="02:00:00")\
     .add_network_conf(network)\
     .add_machine(roles=["control"],
                  cluster="parasilo",

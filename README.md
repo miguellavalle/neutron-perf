@@ -57,3 +57,37 @@ And run a task:
 ```
 rally task start samples/tasks/scenarios/neutron/create-and-bind-ports.yaml
 ```
+
+
+## Enable osprofiler in the deployment
+
+In `reservation.yaml`:
+
+```
+kolla:
+  [...]
+  enable_osprofiler: true
+  enable_elasticsearch: true
+```
+
+Related Rally documentation [[3]]
+
+[3]: https://rally.readthedocs.io/en/latest/quick_start/tutorial/step_10_profiling_openstack_internals.html
+
+Note that the HMAC key is hard-coded in EnOS:
+`OSPROFILER_HMAC_KEY=79cca0a7b4fe3022077f1e1291dfccf9`. ( One can check the
+`current/password.yml`)
+
+To retrieve a trace, you need elasticsearch client installed:
+
+```
+pip install "elasticsearch>=2.0.0,<3.0.0"
+```
+
+The trace can be retrieved using:
+
+```
+osprofiler trace show --html --out trace.html 2931c692-3f37-43db-982a-692e37cc1e96 --connection-string elasticsearch://192.168.42.243:9200
+```
+
+
