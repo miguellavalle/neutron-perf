@@ -1,0 +1,71 @@
+---
+# ############################################### #
+# Vagrant reservation parameters                  #
+# ############################################### #
+provider:
+  type: vagrant
+  # backend: libvirt
+  backend: virtualbox
+  box: generic/debian9
+resources:
+  extra-large:
+    control: 1
+  medium:
+    network: 1
+    compute: 10
+
+# ############################################### #
+# Inventory to use                                #
+# ############################################### #
+
+# This will describe the topology of your services
+inventory: inventories/inventory.sample
+
+# ############################################### #
+# docker registry parameters
+# ############################################### #
+
+# A registry will be deployed and used during the deployment
+registry:
+  type: external
+  ip: 192.168.242.1
+  port: 5000
+  #ceph: true
+  #ceph_keyring: /home/discovery/.ceph/ceph.client.discovery.keyring
+  #ceph_id: discovery
+  #ceph_rbd: discovery_kolla_registry/datas
+  #ceph_mon_host:
+  #  - ceph0.rennes.grid5000.fr
+  #  - ceph1.rennes.grid5000.fr
+  #  - ceph2.rennes.grid5000.fr
+
+# No registry will be used
+# registry:
+#	  type: none
+
+# Use a registry already deployed
+# registry:
+#   type: external
+#   ip: 192.168.142.253
+#   port: 5000
+
+
+# ############################################### #
+# Enos Customizations                             #
+# ############################################### #
+enable_monitoring: yes
+
+
+# ############################################### #
+# Kolla parameters                                #
+# ############################################### #
+# Repository
+kolla_repo: "https://git.openstack.org/openstack/kolla-ansible"
+kolla_ref: "stable/stein"
+
+# Vars : globals.yml
+kolla:
+  kolla_base_distro: "centos"
+  kolla_install_type: "source"
+  enable_heat: "no"
+  nova_compute_virt_type: qemu
