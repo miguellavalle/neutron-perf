@@ -26,9 +26,9 @@ inventory: inventories/inventory.sample
 
 # A registry will be deployed and used during the deployment
 registry:
-  type: external
-  ip: 192.168.42.1
-  port: 5000
+  type: internal
+#  ip: 192.168.42.1
+#  port: 5000
   #ceph: true
   #ceph_keyring: /home/discovery/.ceph/ceph.client.discovery.keyring
   #ceph_id: discovery
