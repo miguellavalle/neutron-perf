@@ -26,6 +26,10 @@ on Grid'5000 (because we have bigger machine there)
 Requirements:
 - enoslib
 
+## Run on Grid'5000 natively (bare metal machines)
+
+Run `enos deploy -f reservation_g5k.yml`
+
 ## Run newest rally-openstack scenarios
 
 Use case: run the following (unmerged) rally scenario : https://review.opendev.org/#/c/662781/
