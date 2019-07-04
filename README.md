@@ -28,7 +28,7 @@ Requirements:
 
 ## Run on Grid'5000 natively (bare metal machines)
 
-Run `enos deploy -f reservation_g5k.yml`
+Run `enos deploy -f reservation.yml`
 
 ## Run newest rally-openstack scenarios
 

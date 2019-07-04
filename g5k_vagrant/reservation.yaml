@@ -69,3 +69,5 @@ kolla:
   kolla_install_type: "source"
   enable_heat: "no"
   nova_compute_virt_type: qemu
+  enable_osprofiler: "yes"
+  enable_elasticsearch: "yes"
